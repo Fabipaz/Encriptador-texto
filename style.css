@@ -1,0 +1,397 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap');
+
+
+:root {
+    --skyblue: rgb(71, 136, 136);
+    --black: rgb(231, 213, 49);
+    --white: black;
+    --darkshadow: rgba(226, 220, 230, 0.2);
+}
+
+
+* {
+    /* Configuracion Universal */
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family:  sans-serif;
+}
+
+
+html {
+    overflow: hidden;
+}
+
+
+html,
+body {
+    height: 100%;
+    background: var(pink);
+    box-shadow: 0 0 12rem var(--darkshadow) inset;
+    animation-name: glowing;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: inherit;
+}
+
+
+.scanlines {
+    pointer-events: none;
+    background: linear-gradient(to left,
+            rgba(255, 255, 255, 0),
+            rgba(201, 18, 18, 0) 30%,
+            rgba(46, 40, 40, 0.3) 80%,
+            rgba(255, 255, 255, 0.75));
+    background-size: 0.5rem 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+}
+
+.scanlines::before {
+    animation: blink-lines 10ms step-end;
+    background: rgba(19, 17, 17, 0.75);
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*////////////////////////////////////////////////////
+// HEADER ////////////////////////////////////////////
+////////////////////////////////////////////////////*/
+
+
+header {
+    width: 100%;
+    /* arriba y abajo | izquierda y derecha */
+    padding: 2rem 4rem 1rem;
+}
+
+
+nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.logo {
+    background-image: url(Imagenes/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 2rem;
+    border: solid 4px var(--white);
+    border-radius: 100%;
+    box-shadow: 0rem 0.1rem 0.6rem var(--turquoise);
+    animation: backwards 20ms infinite alternate-reverse, spin 2s infinite alternate;
+}
+
+
+h1 {
+    padding: 0rem 4rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0rem 0.1rem 1rem var(--turquoise);
+    font-size: 2rem;
+}
+
+
+
+
+
+/*////////////////////////////////////////////////////
+// SECCIÓN DEL CUERPO/////////////////////////////////
+////////////////////////////////////////////////////*/
+
+
+main {
+    width: 100%;
+    height: 60%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    /* Dirección en fila */
+    flex-direction: row;
+    padding: 1rem 4rem;
+}
+
+
+.in-section {
+    width: 70%;
+}
+
+
+.out-section {
+    width: 20%;
+}
+
+
+/*////////////////////////////////////////////////////
+// TEXTAREA/////////////// ///////////////////////////
+////////////////////////////////////////////////////*/
+
+
+.textarea-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2px;
+    
+    
+}
+
+
+.textarea-container>textarea {
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--turquoise);
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: solid 1px var(--turquoise);
+    transition: all 0.6s linear;
+    border-radius: 50px;
+    box-sizing: border-box;
+    
+
+}
+
+
+.textarea-container>textarea::placeholder {
+    color: var(--skyblue);
+    opacity: 0.5;
+}
+
+
+.textarea-container>textarea:focus {
+    outline: none;
+    border: solid 3px var(--skyblue);
+    box-shadow: 0px 0px 10px 2px var(--turquoise) inset;
+}
+
+
+.textarea-container>button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    text-align: center;
+}
+
+
+.radiation {
+    background-image: url("Imagenes/Muñeco.png");
+    background-size: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+    transition: background-size 0.5s ease;
+}
+.radiationS {
+    background-image: url("Imagenes/Muñeco.png");
+    background-size: 0%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+    transition: background-size 0.5s ease;
+}
+
+
+
+/*////////////////////////////////////////////////////
+// BOTONES ///////////////////////////////////////////
+////////////////////////////////////////////////////*/
+
+
+button {
+    background: transparent;
+    padding: 10px 18px;
+    border: 1px solid var(--skyblue);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    width: 50%;
+    color: var(--skyblue);
+    transition: all 0.6s linear;
+    border-radius: 50%;
+    text-shadow: 0rem 0.08rem 0.2rem var(--turquoise);
+}
+
+button:hover {
+    color: var(--blue);
+    background: var(--skyblue);
+    text-shadow: 0rem 0.08rem 0.2rem var(--turquoise);
+}
+
+
+.btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.btn-container>button {
+    width: 100%;
+}
+
+
+
+
+
+/*////////////////////////////////////////////////////
+// DISEÑO DEL FOOTER//////////////////////////////////
+////////////////////////////////////////////////////*/
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0rem;
+    font-style: italic;
+}
+
+
+p {
+    color: var(--skyblue);
+    font-size: 0.9rem;
+    text-shadow: 0rem 0.08rem 0.2rem var(--turquoise);
+}
+
+
+p>a {
+    color: var(--skyblue);
+    text-decoration: none;
+    text-shadow: 0rem 0.08rem 0.2rem var(--turquoise);
+
+}
+
+
+/*////////////////////////////////////////////////////
+// ANIMACIONES ///////////////////////////////////////
+////////////////////////////////////////////////////*/
+
+
+@keyframes blink-lines {
+    0% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    50.1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 150px rgba(0, 255, 255, 0.2) inset;
+    }
+
+    to {
+        box-shadow: 0 0 200px rgba(0, 255, 255, 0.5) inset;
+    }
+}
+
+
+/*////////////////////////////////////////////////////
+// MEDIAQUERIES //////////////////////////////////////
+////////////////////////////////////////////////////*/
+
+
+/* Cuando la pantalla es menor a 700px la dirección de los items flex va a ser uno bajo al otro */
+@media screen and (max-width: 700px) {
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: var(--blue);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--skyblue);
+    }
+
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .in-section {
+        padding-bottom: 8rem;
+        width: 100%;
+    }
+
+    .out-section {
+        width: 100%;
+    }
+
+    .radiation {
+        background-size: 0%;
+    }
+
+    footer {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0rem;
+        
+    }
+}
